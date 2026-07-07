@@ -22,9 +22,7 @@
 &lt { quick-tap-ms = <200>; };
 
 / {
-    chosen {
-        zmk,matrix-transform = &five_column_transform;
-    };
+    chosen { zmk,matrix-transform = &five_column_transform; };
 
     behaviors {
         com_exl: comma_exclamation_mark {
@@ -79,18 +77,6 @@
             layers = <0>;
         };
 
-        combo_esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <2 1>;
-            layers = <0>;
-        };
-
-        combo_tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-            layers = <0>;
-        };
-
         combo_search {
             bindings = <&kp LC(F)>;
             key-positions = <12 2>;
@@ -109,37 +95,33 @@
 
         BASE {
             bindings = <
-                &none            &kp W            &kp F         &kp P                 &kp B            &kp J        &kp L              &kp U         &kp Y            &none
-                &bhm LEFT_GUI A  &bhm LEFT_ALT R  &bhm LCTRL S  &bhm LEFT_SHIFT T     &kp G            &kp M        &bhm LEFT_SHIFT N  &bhm LCTRL E  &bhm LEFT_ALT I  &bhm LEFT_GUI O
-                &kp Z            &kp X            &kp C         &kp D                 &kp V            &kp K        &kp H              &com_exl      &per_que         &kp Q
-                                                                  &none                 &mt LSHIFT BACKSPACE  &lt NUM ENTER  &lt NAV DEL  &kp SPACE  &none
+&none         &kp W              &kp F  &kp P     &kp B              &kp J           &kp L            &kp U                 &kp Y          &none        &bhm LEFT_GUI A  &bhm LEFT_ALT R
+&bhm LCTRL S  &bhm LEFT_SHIFT T  &kp G  &kp M     &bhm LEFT_SHIFT N  &bhm LCTRL E    &bhm LEFT_ALT I  &bhm LEFT_GUI O       &kp Z          &kp X        &kp C            &kp V
+&kp D         &kp K              &kp H  &com_exl  &per_que           &kp Q           &none            &mt LSHIFT BACKSPACE  &lt NUM ENTER  &lt NAV DEL  &kp SPACE        &none
             >;
         };
 
         NUM {
             bindings = <
-                &none      &kp N7  &kp N8  &kp N9  &kp MINUS    &kp AT        &kp COLON                  &kp RIGHT_BRACE               &kp LEFT_BRACE                  &none
-                &kp SLASH  &kp N4  &kp N5  &kp N6  &kp PLUS     &kp HASH      &bhm LEFT_SHIFT SEMICOLON  &bhm LCTRL RIGHT_PARENTHESIS  &bhm LEFT_ALT LEFT_PARENTHESIS  &bhm LEFT_GUI APOSTROPHE
-                &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT      &kp DOLLAR    &kp GRAVE                  &kp RIGHT_BRACKET             &kp LEFT_BRACKET                &kp DOUBLE_QUOTES
-                                    &none   &trans  &trans       &lt COMP DEL  &trans                     &none
+&none    &kp N7      &kp N8     &kp N9             &kp ESCAPE                 &kp AT                    &kp COLON                 &kp PIPE                    &kp BACKSLASH  &none         &lt 2 TAB  &kp N4
+&kp N5   &kp N6      &kp COMMA  &kp HASH           &bhm LEFT_SHIFT SEMICOLON  &bhm LCTRL RIGHT_BRACE    &bhm LEFT_ALT LEFT_BRACE  &bhm LEFT_GUI SINGLE_QUOTE  &kp N0         &kp N1        &kp N2     &kp N3
+&kp DOT  &kp DOLLAR  &kp UNDER  &kp RIGHT_BRACKET  &kp LEFT_BRACKET           &kp DOUBLE_QUOTES         &none                     &kp COMMA                   &trans         &lt COMP DEL  &trans     &none
             >;
         };
 
         NAV {
             bindings = <
-                &none                &kp PIPE             &kp ASTRK         &kp UNDER              &kp PRCNT         &kp INS    &kp HOME    &kp UP    &kp END     &none
-                &bhm LEFT_GUI SLASH  &bhm LEFT_ALT MINUS  &bhm LCTRL PLUS   &bhm LEFT_SHIFT EQUAL  &kp CARET         &kp PG_UP  &kp LEFT    &kp DOWN  &kp RIGHT   &none
-                &kp BACKSLASH        &kp LESS_THAN        &kp GREATER_THAN  &kp TILDE              &kp AMPS          &kp PG_DN  &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp CAPSLOCK
-                                                            &none             &trans                 &lt COMP ENTER    &trans     &trans      &none
+&none                         &kp SLASH             &kp ASTRK   &kp MINUS  &kp PRCNT   &kp INS         &kp HOME   &kp UP  &kp END         &none          &bhm LEFT_GUI GRAVE  &bhm LEFT_ALT LEFT_PARENTHESIS
+&bhm LCTRL RIGHT_PARENTHESIS  &bhm LEFT_SHIFT PLUS  &kp CARET   &kp PG_UP  &kp LEFT    &kp DOWN        &kp RIGHT  &none   &kp TILDE       &kp LESS_THAN  &kp GREATER_THAN     &kp EQUAL
+&kp AMPS                      &kp PG_DN             &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp CAPSLOCK    &none      &trans  &lt COMP ENTER  &trans         &trans               &none
             >;
         };
 
         COMP {
             bindings = <
-                &none         &kp F1        &kp F2        &kp F3          &kp F4    &kp F9  &kp F10         &kp F11    &kp F12   &none
-                &kp LEFT_GUI  &kp LALT      &kp LCTRL     &kp LEFT_SHIFT  &kp F5    &kp F8  &kp LEFT_SHIFT  &kp LCTRL  &kp LALT  &kp LWIN
-                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR      &kp F6    &kp F7  &none           &none      &none     &none
-                                            &none         &none           &trans    &trans  &none           &none
+&none      &kp F1          &kp F2  &kp F3  &kp F4          &kp F9       &kp F10   &kp F11   &kp F12       &none         &kp LEFT_GUI  &kp LALT
+&kp LCTRL  &kp LEFT_SHIFT  &kp F5  &kp F8  &kp LEFT_SHIFT  &kp LCTRL    &kp LALT  &kp LWIN  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR
+&kp F6     &kp F7          &none   &none   &none           &none        &none     &none     &trans        &trans        &none         &none
             >;
         };
     };
