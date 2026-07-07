@@ -96,8 +96,8 @@
         BASE {
             bindings = <
 &none         &kp W              &kp F  &kp P     &kp B              &kp J           &kp L            &kp U                 &kp Y          &none        &bhm LEFT_GUI A  &bhm LEFT_ALT R
-&bhm LCTRL S  &bhm LEFT_SHIFT T  &kp G  &kp M     &bhm LEFT_SHIFT N  &bhm LCTRL E    &bhm LEFT_ALT I  &bhm LEFT_GUI O       &kp Z          &kp X        &kp C            &kp V
-&kp D         &kp K              &kp H  &com_exl  &per_que           &kp Q           &none            &mt LSHIFT BACKSPACE  &lt NUM ENTER  &lt NAV DEL  &kp SPACE        &none
+&bhm LCTRL S  &bhm LEFT_SHIFT T  &kp G  &kp M     &bhm LEFT_SHIFT N  &bhm LCTRL E    &bhm LEFT_ALT I  &bhm LEFT_GUI O       &kp Z          &kp X        &kp C            &kp D
+&kp V         &kp K              &kp H  &com_exl  &per_que           &kp Q           &none            &mt LSHIFT BACKSPACE  &lt NUM ENTER  &lt NAV DEL  &kp SPACE        &none
             >;
         };
 
