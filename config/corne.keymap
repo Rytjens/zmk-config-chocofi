@@ -40,7 +40,7 @@
         per_que: period_question_mark {
             compatible = "zmk,behavior-mod-morph";
             label = "Period Question Mark";
-            bindings = <&kp PERIOD>, <&kp QUESTION>;
+            bindings = <&kp DOT>, <&kp QMARK>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -172,15 +172,15 @@
 
         NUM {
             bindings = <
-&none    &kp N7      &kp N8     &kp N9    &kp ESC          &kp AT               &kp COLON        &kp PIPE         &kp BSLH  &none         &lt 2 TAB  &kp N4
-&kp N5   &kp N6      &kp COMMA  &kp HASH  &bhm LSHFT SEMI  &bhm LCTRL RBRC      &tphm LALT LBRC  &tphm LGUI APOS  &kp N0    &kp N1        &kp N2     &kp N3
-&kp DOT  &kp DOLLAR  &kp UNDER  &kp RBKT  &kp LBKT         &kp DOUBLE_QUOTES    &none            &trans           &trans    &lt COMP DEL  &trans     &none
+&none    &kp N7    &kp N8     &kp N9    &kp ESC          &kp AT             &kp COLON        &kp PIPE        &kp BSLH  &none         &lt 2 TAB  &kp N4
+&kp N5   &kp N6    &kp COMMA  &kp HASH  &bhm LSHFT SEMI  &bhm LCTRL RBRC    &tphm LALT LBRC  &tphm LGUI SQT  &kp N0    &kp N1        &kp N2     &kp N3
+&kp DOT  &kp DLLR  &kp UNDER  &kp RBKT  &kp LBKT         &kp DQT            &none            &trans          &trans    &lt COMP DEL  &trans     &none
             >;
         };
 
         NAV {
             bindings = <
-&none            &kp SLASH        &kp ASTRK   &kp MINUS  &kp PRCNT   &kp INS     &kp HOME   &kp UP  &kp END       &none   &tphm LGUI GRAVE  &tphm LALT LPAR
+&none            &kp FSLH         &kp ASTRK   &kp MINUS  &kp PRCNT   &kp INS     &kp HOME   &kp UP  &kp END       &none   &tphm LGUI GRAVE  &tphm LALT LPAR
 &bhm LCTRL RPAR  &bhm LSHFT PLUS  &kp CARET   &kp PG_UP  &kp LEFT    &kp DOWN    &kp RIGHT  &none   &kp TILDE     &kp LT  &kp GT            &kp EQUAL
 &kp AMPS         &kp PG_DN        &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp CAPS    &none      &trans  &lt COMP RET  &trans  &trans            &none
             >;
