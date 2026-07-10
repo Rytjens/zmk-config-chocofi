@@ -8,10 +8,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#define BASE 0
-#define NUM  1
-#define NAV  2
-#define COMP 3
+#define BASE   0
+#define NUMNAV 1
+#define SYMBOL 2
+#define COMP   3
 
 &mt {
     flavor = "balanced";
@@ -20,8 +20,8 @@
 };
 
 &lt {
-    quick-tap-ms = <200>;
     tapping-term-ms = <250>;
+    quick-tap-ms = <200>;
 };
 
 / {
@@ -126,13 +126,13 @@
         combo_brace {
             bindings = <&macro_brc>;
             key-positions = <17 18>;
-            layers = <1>;
+            layers = <2>;
         };
 
         combo_brack {
             bindings = <&macro_bkt>;
             key-positions = <28 27>;
-            layers = <1>;
+            layers = <2>;
         };
     };
 
@@ -178,33 +178,37 @@
 
         BASE {
             bindings = <
-&none         &kp W         &kp F  &kp P     &kp B         &kp J           &kp L         &kp U            &kp Y        &none        &tphm LGUI A  &tphm LALT R
-&bhm LCTRL S  &bhm LSHFT T  &kp G  &kp M     &bhm LSHFT N  &bhm LCTRL E    &tphm LALT I  &tphm LGUI O     &kp Z        &kp X        &kp C         &kp D
-&kp V         &kp K         &kp H  &com_exl  &per_que      &kp Q           &none         &mt LSHIFT BSPC  &lt NUM RET  &lt NAV DEL  &kp SPACE     &none
+  &none         &kp W         &kp F         &kp P            &kp B        &kp J      &kp L         &kp U         &kp Y         &none
+  &tphm LGUI A  &tphm LALT R  &bhm LCTRL S  &bhm LSHFT T     &kp G        &kp M      &bhm LSHFT N  &bhm LCTRL E  &tphm LALT I  &tphm LGUI O
+  &kp Z         &kp X         &kp C         &kp D            &kp V        &kp K      &kp H         &com_exl      &per_que      &kp Q
+                              &none         &mt LSHIFT BSPC  &lt 1 RET    &lt 2 DEL  &kp SPACE     &none
             >;
         };
 
-        NUM {
+        NUMNAV {
             bindings = <
-&none    &kp N7    &kp N8     &kp N9    &kp ESC          &at_email          &kp COLON        &kp PIPE        &kp BSLH  &none         &lt 2 TAB  &kp N4
-&kp N5   &kp N6    &kp COMMA  &kp HASH  &bhm LSHFT SEMI  &bhm LCTRL RBRC    &tphm LALT LBRC  &tphm LGUI SQT  &kp N0    &kp N1        &kp N2     &kp N3
-&kp DOT  &kp DLLR  &kp UNDER  &kp RBKT  &kp LBKT         &kp DQT            &none            &trans          &trans    &lt COMP DEL  &trans     &none
+  &none      &kp N7         &kp N8          &kp N9          &kp ESC      &kp INS    &kp HOME            &kp UP            &kp END            &none
+  &lt 2 TAB  &tphm LALT N4  &tphm LCTRL N5  &tphm LSHFT N6  &kp COMMA    &kp PG_UP  &tphm LSHFT LEFT    &tphm LCTRL DOWN  &tphm LALT RIGHT   &none
+  &kp N0     &kp N1         &kp N2          &kp N3          &kp DOT      &kp PG_DN  &kp C_PREV          &kp C_PP          &kp C_NEXT         &kp CAPS
+                            &none           &trans          &trans       &lt 3 DEL  &trans              &none
             >;
         };
 
-        NAV {
+        SYMBOL {
             bindings = <
-&none            &kp FSLH         &kp ASTRK   &kp MINUS  &kp PRCNT   &kp INS     &kp HOME   &kp UP  &kp END       &none   &tphm LGUI GRAVE  &tphm LALT LPAR
-&bhm LCTRL RPAR  &bhm LSHFT PLUS  &kp CARET   &kp PG_UP  &kp LEFT    &kp DOWN    &kp RIGHT  &none   &kp TILDE     &kp LT  &kp GT            &kp EQUAL
-&kp AMPS         &kp PG_DN        &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp CAPS    &none      &trans  &lt COMP RET  &trans  &trans            &none
+  &none             &kp FSLH         &kp ASTRK         &kp MINUS         &kp PRCNT    &at_email  &kp COLON         &kp PIPE          &kp BSLH         &none
+  &tphm LGUI GRAVE  &tphm LALT LPAR  &tphm LCTRL RPAR  &tphm LSHFT PLUS  &kp CARET    &kp HASH   &tphm LSHFT SEMI  &tphm LCTRL RBRC  &tphm LALT LBRC  &tphm LGUI SQT
+  &kp TILDE         &kp LT           &kp GT            &kp EQUAL         &kp AMPS     &kp DLLR   &kp UNDER         &kp RBKT          &kp LBKT         &kp DQT
+                                     &none             &trans            &lt 3 RET    &trans     &trans            &none
             >;
         };
 
         COMP {
             bindings = <
-&none      &kp F1     &kp F2  &kp F3  &kp F4     &kp F9       &kp F10   &kp F11     &kp F12       &none         &kp LGUI      &kp LALT
-&kp LCTRL  &kp LSHFT  &kp F5  &kp F8  &kp LSHFT  &kp LCTRL    &kp LALT  &kp LGUI    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-&kp F6     &kp F7     &none   &none   &none      &none        &none     &bt BT_CLR  &trans        &trans        &none         &none
+  &none         &kp F1        &kp F2        &kp F3        &kp F4    &kp F9  &kp F10    &kp F11    &kp F12   &none
+  &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHFT     &kp F5    &kp F8  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp F6    &kp F7  &none      &none      &none     &none
+                              &none         &bt BT_CLR    &trans    &trans  &none      &none
             >;
         };
     };
