@@ -69,6 +69,13 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <150>;
         };
+
+        at_email: at_email {
+            compatible = "zmk,behavior-tap-dance";
+            label = "AT_EMAIL";
+            #binding-cells = <0>;
+            bindings = <&kp AT>, <&macro_email>;
+        };
     };
 
     combos {
@@ -157,6 +164,13 @@
             bindings = <&kp LBKT &kp RBKT &kp LEFT>;
             label = "MACRO_BKT";
         };
+
+        macro_email: macro_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp J &kp H &kp R &kp I &kp E &kp T &kp J &kp E &kp N &kp S &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "MACRO_EMAIL";
+        };
     };
 
     keymap {
@@ -172,7 +186,7 @@
 
         NUM {
             bindings = <
-&none    &kp N7    &kp N8     &kp N9    &kp ESC          &kp AT             &kp COLON        &kp PIPE        &kp BSLH  &none         &lt 2 TAB  &kp N4
+&none    &kp N7    &kp N8     &kp N9    &kp ESC          &at_email          &kp COLON        &kp PIPE        &kp BSLH  &none         &lt 2 TAB  &kp N4
 &kp N5   &kp N6    &kp COMMA  &kp HASH  &bhm LSHFT SEMI  &bhm LCTRL RBRC    &tphm LALT LBRC  &tphm LGUI SQT  &kp N0    &kp N1        &kp N2     &kp N3
 &kp DOT  &kp DLLR  &kp UNDER  &kp RBKT  &kp LBKT         &kp DQT            &none            &trans          &trans    &lt COMP DEL  &trans     &none
             >;
